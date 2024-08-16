@@ -1,0 +1,59 @@
+/*Stile del corpo della pagina*/
+body {
+    margin: 0;
+    padding: 0;
+    background: #262626;
+}
+
+/*Rating*/
+.rating {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(180deg);
+    display: flex;
+}
+
+/*Input del Rating*/
+.rating input {
+    display: none;
+}
+
+/*Label del Rating*/
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    padding: 0 15px;
+}
+
+/*Label del Rating in Before*/
+.rating label::before {
+    content: '\f005';
+    font-family: FontAwesome;
+    position: relative;
+    display: block;
+    font-size: 70px;
+    color: #101010;
+}
+
+/*Label del Rating in After*/
+.rating label::after {
+    content: '\f005';
+    font-family: FontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 70px;
+    color: #1f9cff;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*Label del Rating in After in Hover*/
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after {
+    opacity: 1;
+}
